@@ -81,19 +81,19 @@ phases:
                         cpu: "250m"
                       limits:
                         cpu: "500m"
-                  args:
-                  - /bin/sh
-                  - -c
-                  - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
-                  livenessProbe:
-                    exec:
-                      command:
-                      - cat
-                      - /tmp/healthy
-                    initialDelaySeconds: 120
-                    timeoutSeconds: 2
-                    periodSeconds: 5
-                    failureThreshold: 5
+                    args:
+                    - /bin/sh
+                    - -c
+                    - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
+                    livenessProbe:
+                      exec:
+                        command:
+                        - cat
+                        - /tmp/healthy
+                      initialDelaySeconds: 120
+                      timeoutSeconds: 2
+                      periodSeconds: 5
+                      failureThreshold: 5
           EOF
 #cache:
 #  paths:
